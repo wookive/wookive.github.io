@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Main</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/MainLogo.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body style="cursor:hand">
+        <bgsound id=music autostart="true">
+
+        <embed src='mp3/tIKKo.mp3' autostart='true' hidden='true' volume='-10' loop='true'>
+        <a href="RoundSelect.html" onmouseover="soundsource.playst()"><img src="img/MainButton1.gif" 
+         id="MainLogo"></a>
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#MainLogo").hover(
+                function () { $(this).attr("src", "img/MainButton2.gif")},
+
+                function () { $(this).attr("src", "img/MainButton1.gif")}
+            );
+        });
+
+
+    var SoundType={ "mp3": "audio/mpeg","ogg": "audio/ogg","wav": "audio/wav"}
+
+    function effect(sound){
+        var player=document.createElement('audio')
+        for (var i=0; i<arguments.length; i++){
+        var sourceel=document.createElement('source')
+        sourceel.setAttribute('src', arguments[i])
+        if (arguments[i].match(/\.(\w+)$/i))
+            sourceel.setAttribute('type', SoundType[RegExp.$1])
+        player.appendChild(sourceel)
+        }
+        player.load()
+        player.playst=function(){
+   
+        player.play()
+        }
+        return player
+        }
+        var soundsource=effect("mp3/MainLogomp3.mp3");
+        </script>
+    </body>
+</html>
