@@ -99,7 +99,7 @@ table {
   .back{
     position: absolute;
     z-index:1;
-    top:100px;
+    top:65px;
     left:50px;
   }
 
@@ -107,14 +107,14 @@ table {
     position: absolute;
     z-index:1;
     top:30px;
-    left:250px;
-    width:400px;
+    left:150px;
+    width:200px;
   }
 
   .hint:hover{
     position: absolute;
     z-index:1;
     top:30px;
-    left:250px;
-    width:400px;
+    left:150px;
+    width:200px;
   }
