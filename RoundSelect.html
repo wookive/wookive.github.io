@@ -3,14 +3,96 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Main</title>
+        <title>Look it up!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/MainStart.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/jquery.fullpage.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+    <style type="text/css">
+        .section1 {
+            background-image: url("img/Forest.png");
+        }
+        .section2 {
+            background-image: url("img/factory.png");
+        }
+        .section3 {
+            background-image: url("img/universe.png");
+        }
+        .section4 {
+            background-image: url("img/city.png");
+        }
+    </style>
     </head>
-    <body >
+    <body>
+            <div id="main" class="scroll-container">
+            <section class="section1"><div class="wook1"><a href="Forest.html" onmouseover="soundsource.playst()"><img src="img/Start.png" width="200" id="button"></a></div></section>
+            <section class="section2"><div class="wook2"><a href="Givememoney.html" onmouseover="soundsource.playst()"><img src="img/Lock.png" width="200" id="button1"></a></div></section>
+            <section class="section3"><div class="wook2"><a href="Givememoney.html" onmouseover="soundsource.playst()"><img src="img/Lock.png" width="200" id="button2"></a></div></section>
+            <section class="section4"><div class="wook2"><a href="Givememoney.html" onmouseover="soundsource.playst()"><img src="img/Lock.png" width="200" id="button3"></a></div></section>
+        </div>
+    <script src="jquery.fullpage.js"></script>
+    <script type="text/javascript">
+        new fullScroll({
+            displayDots: true,
+            dotsPosition: 'left',
+            animateTime: 0.7,
+            animateFunction: 'ease'
+        });
 
+        $(function () {
+            $("#button").hover(
+                function () { $(this).attr("src", "img/Starthover.png")},
+
+                function () { $(this).attr("src", "img/Start.png")}
+            );
+        });
+
+        $(function () {
+            $("#button1").hover(
+                function () { $(this).attr("src", "img/Lockhover.png")},
+
+                function () { $(this).attr("src", "img/Lock.png")}
+            );
+        });
+
+        $(function () {
+            $("#button2").hover(
+                function () { $(this).attr("src", "img/Lockhover.png")},
+
+                function () { $(this).attr("src", "img/Lock.png")}
+            );
+        });
+
+        $(function () {
+            $("#button3").hover(
+                function () { $(this).attr("src", "img/Lockhover.png")},
+
+                function () { $(this).attr("src", "img/Lock.png")}
+            );
+        });
+
+        var SoundType={ "mp3": "audio/mpeg","ogg": "audio/ogg","wav": "audio/wav"}
+
+        function effect(sound){
+        var player=document.createElement('audio')
+        for (var i=0; i<arguments.length; i++){
+        var sourceel=document.createElement('source')
+        sourceel.setAttribute('src', arguments[i])
+        if (arguments[i].match(/\.(\w+)$/i))
+            sourceel.setAttribute('type', SoundType[RegExp.$1])
+        player.appendChild(sourceel)
+        }
+        player.load()
+        player.playst=function(){
+   
+        player.play()
+        }
+        return player
+        }
+        var soundsource=effect("mp3/bong.mp3");
+    </script>
     </body>
+    
 </html>

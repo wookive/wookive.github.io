@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>THE FOREST</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/Forest.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="js/Magnify.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+    </head>
+    <body>
+
+
+        <embed src='mp3/ingame.mp3' autostart='true' hidden='true' volume='0' loop="true">
+        <img class="image-zoom-available" src="img/Forest.jpg" width="100%" draggable=false>
+        <a href="RoundSelect.html" onmouseover="soundsource.playst()" ><img class="back" src="img/back.png" width="3%"></a>
+        <img class="hint" onmouseover="soundsource.playst()" src="img/hint.png" width="2%" id="hint">
+
+        
+        
+        <script type="text/javascript">
+            $(function () {
+                $("#hint").hover(
+                    function () { $(this).attr("src", "img/hint2.png")},
+    
+                    function () { $(this).attr("src", "img/hint.png")}
+                );
+            });
+
+
+            var SoundType={ "mp3": "audio/mpeg","ogg": "audio/ogg","wav": "audio/wav"}
+
+    function effect(sound){
+    var player=document.createElement('audio')
+    for (var i=0; i<arguments.length; i++){
+    var sourceel=document.createElement('source')
+    sourceel.setAttribute('src', arguments[i])
+    if (arguments[i].match(/\.(\w+)$/i))
+        sourceel.setAttribute('type', SoundType[RegExp.$1])
+    player.appendChild(sourceel)
+    }
+    player.load()
+    player.playst=function(){
+
+    player.play()
+    }
+    return player
+    }
+    var soundsource=effect("mp3/mmmmm.mp3");
+
+    </script>
+    
+    </body>
+</html>

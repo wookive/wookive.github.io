@@ -80,6 +80,11 @@ table {
 }
 
 /* change border colour to suit your needs */
+* {
+    cursor:url(../hand.cur),auto;
+}
+
+
 hr {
     display:block;
     height:1px;
@@ -97,7 +102,7 @@ input, select {
 body {
     background-image: url(../img/MainButtonbackground.jpg);
     width: 100%;
-    background-repeat : no-repeat
+    background-repeat : no-repeat;
 }
 
 #MainLogo {
